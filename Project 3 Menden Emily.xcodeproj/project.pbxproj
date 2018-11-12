@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		77F432910131B3ED82C4130C /* Pods_Project_3_Menden_Emily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515473A1C66471EB8E50D79C /* Pods_Project_3_Menden_Emily.framework */; };
+		CC6788902199F3A5002F830E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67888F2199F3A5002F830E /* BooksViewController.swift */; };
 		CC7F5C352198FF0C003103CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F5C342198FF0C003103CA /* AppDelegate.swift */; };
 		CC7F5C3A2198FF0C003103CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC7F5C382198FF0C003103CA /* Main.storyboard */; };
 		CC7F5C3C2198FF0F003103CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC7F5C3B2198FF0F003103CA /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		515473A1C66471EB8E50D79C /* Pods_Project_3_Menden_Emily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_3_Menden_Emily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E7F1FE92C72C08371BFE237 /* Pods-Project 3 Menden Emily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project 3 Menden Emily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project 3 Menden Emily/Pods-Project 3 Menden Emily.debug.xcconfig"; sourceTree = "<group>"; };
 		BA9E87BA234E030CD95A3EF8 /* Pods-Project 3 Menden Emily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project 3 Menden Emily.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project 3 Menden Emily/Pods-Project 3 Menden Emily.release.xcconfig"; sourceTree = "<group>"; };
+		CC67888F2199F3A5002F830E /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		CC7F5C312198FF0C003103CA /* Project 3 Menden Emily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 3 Menden Emily.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7F5C342198FF0C003103CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC7F5C392198FF0C003103CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				CC7F5C342198FF0C003103CA /* AppDelegate.swift */,
 				CC7F5C5D2199EFBC003103CA /* VolumesViewController.swift */,
+				CC67888F2199F3A5002F830E /* BooksViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				CC7F5C542199EE11003103CA /* GeoDatabase.swift in Sources */,
 				CC7F5C522199EE11003103CA /* String+Extensions.swift in Sources */,
 				CC7F5C352198FF0C003103CA /* AppDelegate.swift in Sources */,
+				CC6788902199F3A5002F830E /* BooksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
