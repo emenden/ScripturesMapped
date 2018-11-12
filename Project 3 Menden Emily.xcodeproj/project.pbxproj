@@ -21,6 +21,7 @@
 		CC7F5C582199EE11003103CA /* ScriptureRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F5C4F2199EE0E003103CA /* ScriptureRenderer.swift */; };
 		CC7F5C592199EE11003103CA /* Scripture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F5C502199EE0F003103CA /* Scripture.swift */; };
 		CC7F5C5A2199EE11003103CA /* geo.21.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CC7F5C512199EE10003103CA /* geo.21.sqlite */; };
+		CC7F5C5E2199EFBC003103CA /* VolumesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F5C5D2199EFBC003103CA /* VolumesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		CC7F5C4F2199EE0E003103CA /* ScriptureRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptureRenderer.swift; sourceTree = "<group>"; };
 		CC7F5C502199EE0F003103CA /* Scripture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scripture.swift; sourceTree = "<group>"; };
 		CC7F5C512199EE10003103CA /* geo.21.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = geo.21.sqlite; sourceTree = "<group>"; };
+		CC7F5C5D2199EFBC003103CA /* VolumesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				CC7F5C342198FF0C003103CA /* AppDelegate.swift */,
+				CC7F5C5D2199EFBC003103CA /* VolumesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7F5C5E2199EFBC003103CA /* VolumesViewController.swift in Sources */,
 				CC7F5C582199EE11003103CA /* ScriptureRenderer.swift in Sources */,
 				CC7F5C552199EE11003103CA /* Book.swift in Sources */,
 				CC7F5C562199EE11003103CA /* GeoPlace.swift in Sources */,
