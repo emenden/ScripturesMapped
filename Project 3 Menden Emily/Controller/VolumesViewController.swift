@@ -17,6 +17,14 @@ class VolumesViewController: UITableViewController {
     
     var model = GeoDatabase.sharedGeoDatabase.volumes()
     
+    // MARK:- Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
+    // MARK:- Table view data source
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.count
     }
@@ -27,5 +35,11 @@ class VolumesViewController: UITableViewController {
         cell.textLabel?.text = model[indexPath.row]
         
         return cell
+    }
+    
+    // MARK:- Table view delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: Storyboard.ShowBooksSegueIdentifier, sender: model[indexPath.row])
     }
 }
