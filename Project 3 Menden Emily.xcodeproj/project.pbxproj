@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		77F432910131B3ED82C4130C /* Pods_Project_3_Menden_Emily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515473A1C66471EB8E50D79C /* Pods_Project_3_Menden_Emily.framework */; };
+		CC5B6AB3219A456300838B17 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5B6AB2219A456300838B17 /* WebKit.framework */; };
+		CC5B6AB5219A459700838B17 /* ScripturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B6AB4219A459700838B17 /* ScripturesViewController.swift */; };
 		CC6788902199F3A5002F830E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67888F2199F3A5002F830E /* BooksViewController.swift */; };
 		CC7F5C352198FF0C003103CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F5C342198FF0C003103CA /* AppDelegate.swift */; };
 		CC7F5C3A2198FF0C003103CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC7F5C382198FF0C003103CA /* Main.storyboard */; };
@@ -23,12 +25,15 @@
 		CC7F5C592199EE11003103CA /* Scripture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F5C502199EE0F003103CA /* Scripture.swift */; };
 		CC7F5C5A2199EE11003103CA /* geo.21.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CC7F5C512199EE10003103CA /* geo.21.sqlite */; };
 		CC7F5C5E2199EFBC003103CA /* VolumesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F5C5D2199EFBC003103CA /* VolumesViewController.swift */; };
+		CCA8D8C0219A8D7500963A87 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA8D8BF219A8D7500963A87 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		515473A1C66471EB8E50D79C /* Pods_Project_3_Menden_Emily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_3_Menden_Emily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E7F1FE92C72C08371BFE237 /* Pods-Project 3 Menden Emily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project 3 Menden Emily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project 3 Menden Emily/Pods-Project 3 Menden Emily.debug.xcconfig"; sourceTree = "<group>"; };
 		BA9E87BA234E030CD95A3EF8 /* Pods-Project 3 Menden Emily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project 3 Menden Emily.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project 3 Menden Emily/Pods-Project 3 Menden Emily.release.xcconfig"; sourceTree = "<group>"; };
+		CC5B6AB2219A456300838B17 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		CC5B6AB4219A459700838B17 /* ScripturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScripturesViewController.swift; sourceTree = "<group>"; };
 		CC67888F2199F3A5002F830E /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		CC7F5C312198FF0C003103CA /* Project 3 Menden Emily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 3 Menden Emily.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7F5C342198FF0C003103CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +51,7 @@
 		CC7F5C502199EE0F003103CA /* Scripture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scripture.swift; sourceTree = "<group>"; };
 		CC7F5C512199EE10003103CA /* geo.21.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = geo.21.sqlite; sourceTree = "<group>"; };
 		CC7F5C5D2199EFBC003103CA /* VolumesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumesViewController.swift; sourceTree = "<group>"; };
+		CCA8D8BF219A8D7500963A87 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC5B6AB3219A456300838B17 /* WebKit.framework in Frameworks */,
 				77F432910131B3ED82C4130C /* Pods_Project_3_Menden_Emily.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +70,7 @@
 		417E3C59BB51D88C1F43D4F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC5B6AB2219A456300838B17 /* WebKit.framework */,
 				515473A1C66471EB8E50D79C /* Pods_Project_3_Menden_Emily.framework */,
 			);
 			name = Frameworks;
@@ -75,6 +83,16 @@
 				BA9E87BA234E030CD95A3EF8 /* Pods-Project 3 Menden Emily.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CC5B6AB1219A443400838B17 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				CC7F5C4C2199EE0E003103CA /* Book.swift */,
+				CC7F5C4D2199EE0E003103CA /* GeoPlace.swift */,
+				CC7F5C502199EE0F003103CA /* Scripture.swift */,
+			);
+			path = Table;
 			sourceTree = "<group>";
 		};
 		CC7F5C282198FF0C003103CA = {
@@ -110,8 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				CC7F5C342198FF0C003103CA /* AppDelegate.swift */,
-				CC7F5C5D2199EFBC003103CA /* VolumesViewController.swift */,
 				CC67888F2199F3A5002F830E /* BooksViewController.swift */,
+				CC5B6AB4219A459700838B17 /* ScripturesViewController.swift */,
+				CC7F5C5D2199EFBC003103CA /* VolumesViewController.swift */,
+				CCA8D8BF219A8D7500963A87 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -119,8 +139,8 @@
 		CC7F5C472199EAF0003103CA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CC7F5C382198FF0C003103CA /* Main.storyboard */,
 				CC7F5C3D2198FF0F003103CA /* LaunchScreen.storyboard */,
+				CC7F5C382198FF0C003103CA /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -128,11 +148,10 @@
 		CC7F5C482199EAF5003103CA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CC7F5C5B2199EE53003103CA /* HTML */,
-				CC7F5C4C2199EE0E003103CA /* Book.swift */,
 				CC7F5C4B2199EE0D003103CA /* GeoDatabase.swift */,
-				CC7F5C4D2199EE0E003103CA /* GeoPlace.swift */,
-				CC7F5C502199EE0F003103CA /* Scripture.swift */,
+				CC7F5C4F2199EE0E003103CA /* ScriptureRenderer.swift */,
+				CC7F5C5B2199EE53003103CA /* HTML */,
+				CC5B6AB1219A443400838B17 /* Table */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,7 +161,6 @@
 			children = (
 				CC7F5C4E2199EE0E003103CA /* geocode.js */,
 				CC7F5C4A2199EE0D003103CA /* scripture.css */,
-				CC7F5C4F2199EE0E003103CA /* ScriptureRenderer.swift */,
 			);
 			path = HTML;
 			sourceTree = "<group>";
@@ -273,12 +291,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCA8D8C0219A8D7500963A87 /* MapViewController.swift in Sources */,
 				CC7F5C5E2199EFBC003103CA /* VolumesViewController.swift in Sources */,
 				CC7F5C582199EE11003103CA /* ScriptureRenderer.swift in Sources */,
 				CC7F5C552199EE11003103CA /* Book.swift in Sources */,
 				CC7F5C562199EE11003103CA /* GeoPlace.swift in Sources */,
 				CC7F5C592199EE11003103CA /* Scripture.swift in Sources */,
 				CC7F5C542199EE11003103CA /* GeoDatabase.swift in Sources */,
+				CC5B6AB5219A459700838B17 /* ScripturesViewController.swift in Sources */,
 				CC7F5C522199EE11003103CA /* String+Extensions.swift in Sources */,
 				CC7F5C352198FF0C003103CA /* AppDelegate.swift in Sources */,
 				CC6788902199F3A5002F830E /* BooksViewController.swift in Sources */,
