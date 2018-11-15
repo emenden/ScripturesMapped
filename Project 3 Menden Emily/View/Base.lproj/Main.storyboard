@@ -10,17 +10,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
+        <!--Map-->
         <scene sceneID="N4Y-sK-tzR">
             <objects>
                 <viewController id="syr-i1-fJf" customClass="MapViewController" customModule="Project_3_Menden_Emily" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CaX-JV-gud">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satelliteFlyover" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RqQ-gF-1Rl">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <outlet property="delegate" destination="syr-i1-fJf" id="Ylm-EO-0fr"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RqQ-gF-1Rl" firstAttribute="leading" secondItem="6dc-vj-kwG" secondAttribute="leading" id="TAJ-FK-5Ck"/>
+                            <constraint firstItem="RqQ-gF-1Rl" firstAttribute="top" secondItem="6dc-vj-kwG" secondAttribute="top" id="Twb-Gx-aqi"/>
+                            <constraint firstItem="6dc-vj-kwG" firstAttribute="bottom" secondItem="RqQ-gF-1Rl" secondAttribute="bottom" id="d2c-vL-0Be"/>
+                            <constraint firstItem="6dc-vj-kwG" firstAttribute="trailing" secondItem="RqQ-gF-1Rl" secondAttribute="trailing" id="ln0-Ub-nwF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6dc-vj-kwG"/>
                     </view>
-                    <navigationItem key="navigationItem" id="y3W-Gm-CQ9"/>
+                    <navigationItem key="navigationItem" title="Map" id="y3W-Gm-CQ9"/>
+                    <connections>
+                        <outlet property="mapView" destination="RqQ-gF-1Rl" id="F3q-07-xZB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGk-Hw-A0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

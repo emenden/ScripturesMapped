@@ -26,6 +26,7 @@
 		CC7F5C5A2199EE11003103CA /* geo.21.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CC7F5C512199EE10003103CA /* geo.21.sqlite */; };
 		CC7F5C5E2199EFBC003103CA /* VolumesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F5C5D2199EFBC003103CA /* VolumesViewController.swift */; };
 		CCA8D8C0219A8D7500963A87 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA8D8BF219A8D7500963A87 /* MapViewController.swift */; };
+		CCFEBAED219D363D00FBE9AB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFEBAEC219D363D00FBE9AB /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		CC7F5C512199EE10003103CA /* geo.21.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = geo.21.sqlite; sourceTree = "<group>"; };
 		CC7F5C5D2199EFBC003103CA /* VolumesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumesViewController.swift; sourceTree = "<group>"; };
 		CCA8D8BF219A8D7500963A87 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CCFEBAEC219D363D00FBE9AB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCFEBAED219D363D00FBE9AB /* MapKit.framework in Frameworks */,
 				CC5B6AB3219A456300838B17 /* WebKit.framework in Frameworks */,
 				77F432910131B3ED82C4130C /* Pods_Project_3_Menden_Emily.framework in Frameworks */,
 			);
@@ -70,6 +73,7 @@
 		417E3C59BB51D88C1F43D4F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CCFEBAEC219D363D00FBE9AB /* MapKit.framework */,
 				CC5B6AB2219A456300838B17 /* WebKit.framework */,
 				515473A1C66471EB8E50D79C /* Pods_Project_3_Menden_Emily.framework */,
 			);

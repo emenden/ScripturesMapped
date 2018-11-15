@@ -17,18 +17,25 @@ class BooksViewController: UITableViewController {
     
     var books = [Book]()
     var volume = ""
-    var volumeId = 1 {
-        didSet {
-            books = GeoDatabase.sharedGeoDatabase.booksForParentId(volumeId)
-        }
-    }
+    var volumeId = 1
     
     //MARK:- View controller lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = volume
+        updateModel()
+    }
+    
+    // MARK:- Segues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let scripturesVC = segue.destination as? ScripturesViewController {
+            if let indexPath = sender as? IndexPath {   // could send a Book instead
+                scripturesVC.bookId = books[indexPath.row].id
+                scripturesVC.chapter = 7
+            }
+        }
+        // when preparing for segue to map, could use Configuration object or could set all values needed here
     }
     
     // MARK:- Table view Data source
@@ -46,6 +53,14 @@ class BooksViewController: UITableViewController {
     
     // MARK:- Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Storyboard.ShowScripturesSegueIdentifier, sender: self)
+        //performSegue(withIdentifier: Storyboard.ShowScripturesSegueIdentifier, sender: self)
+        performSegue(withIdentifier: Storyboard.ShowScripturesSegueIdentifier, sender: indexPath)
+    }
+    
+    // MARK:- Helpers
+    
+    private func updateModel() {
+        title = volume
+        books = GeoDatabase.sharedGeoDatabase.booksForParentId(volumeId)
     }
 }
