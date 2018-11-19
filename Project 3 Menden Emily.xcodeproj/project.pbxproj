@@ -27,6 +27,7 @@
 		CC7F5C5E2199EFBC003103CA /* VolumesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F5C5D2199EFBC003103CA /* VolumesViewController.swift */; };
 		CCA8D8C0219A8D7500963A87 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA8D8BF219A8D7500963A87 /* MapViewController.swift */; };
 		CCFEBAED219D363D00FBE9AB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFEBAEC219D363D00FBE9AB /* MapKit.framework */; };
+		CCFEBAEF219DCD0A00FBE9AB /* MapConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFEBAEE219DCD0A00FBE9AB /* MapConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		CC7F5C5D2199EFBC003103CA /* VolumesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumesViewController.swift; sourceTree = "<group>"; };
 		CCA8D8BF219A8D7500963A87 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CCFEBAEC219D363D00FBE9AB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CCFEBAEE219DCD0A00FBE9AB /* MapConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				CC7F5C4B2199EE0D003103CA /* GeoDatabase.swift */,
+				CCFEBAEE219DCD0A00FBE9AB /* MapConfig.swift */,
 				CC7F5C4F2199EE0E003103CA /* ScriptureRenderer.swift */,
 				CC7F5C5B2199EE53003103CA /* HTML */,
 				CC5B6AB1219A443400838B17 /* Table */,
@@ -301,6 +304,7 @@
 				CC7F5C552199EE11003103CA /* Book.swift in Sources */,
 				CC7F5C562199EE11003103CA /* GeoPlace.swift in Sources */,
 				CC7F5C592199EE11003103CA /* Scripture.swift in Sources */,
+				CCFEBAEF219DCD0A00FBE9AB /* MapConfig.swift in Sources */,
 				CC7F5C542199EE11003103CA /* GeoDatabase.swift in Sources */,
 				CC5B6AB5219A459700838B17 /* ScripturesViewController.swift in Sources */,
 				CC7F5C522199EE11003103CA /* String+Extensions.swift in Sources */,

@@ -11,10 +11,15 @@ import WebKit
 
 class ScripturesViewController : UIViewController, WKNavigationDelegate {
     
+    private struct Storyboard {
+        static let ShowMapSegueIdentifier = "ShowMap"
+    }
+    
     // MARK:- Properties
     
     var bookId = 101
     var chapter = 2
+    var geoplaces = [GeoPlace]()
     
     // MARK:- Private Properties
     
@@ -24,24 +29,32 @@ class ScripturesViewController : UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
     
+    // MARK:- Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Storyboard.ShowMapSegueIdentifier {
+            
+        }
+    }
+    
     // MARK:- View controller lifecycle
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+        print("in viewDidLayoutSubviews")
         configureDetailViewController()
     }
     
     override func viewDidLoad() {
+        print("in viewDidLoad")
         super.viewDidLoad()
         
-        configureDetailViewController()
-        
         let (html, geoplaces) = ScriptureRenderer.sharedRenderer.htmlForBookId(bookId, chapter: chapter)
+        print("geoplaces in scriptures viewDidLoad")
+        print(geoplaces)
+        self.geoplaces = geoplaces
         
-        if let mapVC = mapViewController {
-            mapVC.configureMap(geoplaces)
-        }
+        //configureMap()
+        //configureDetailViewController()
         
         webView.navigationDelegate = self
         webView.loadHTMLString(html, baseURL: nil)
@@ -54,22 +67,28 @@ class ScripturesViewController : UIViewController, WKNavigationDelegate {
             let baseUrl = ScriptureRenderer.Constant.baseUrl
             
             if path.hasPrefix(baseUrl) {
-                if let geoplaceId = Int(path.substring(fromOffset: baseUrl.count)) {
-                    // NEEDSWORK: focus on geoplaceID
-                    print("Focusing on geoplace \(geoplaceId)")
-                }
-                
                 if mapViewController == nil {
                     print("There is no map view controller")
+                    
+                    if let geoplace = getGeoplaceFromUrl(path) {
+                        MapConfig.sharedMapConfig.selectedGeoplace = geoplace
+                        MapConfig.sharedMapConfig.geoplaces.append(geoplace)
+                        MapConfig.sharedMapConfig.focusOnOne = true
+                    }
+                    // create a map view controller and zoom on their click
+
                 } else {
                     print("There is a map view controller")
+                    
+                    if let geoplace = getGeoplaceFromUrl(path) {
+                        mapViewController?.zoomOnLocation(geoplace)
+                    }
                 }
     
                 decisionHandler(.cancel)
                 return
             }
         }
-        
         decisionHandler(WKNavigationActionPolicy.allow)
     }
     
@@ -79,9 +98,29 @@ class ScripturesViewController : UIViewController, WKNavigationDelegate {
         if let splitVC = splitViewController {
             if let navVC = splitVC.viewControllers.last as? UINavigationController {
                 mapViewController = navVC.topViewController as? MapViewController
+                print("in configureDetailViewController")
+                configureMapForChapterAnnotations()
             }
         } else {
             mapViewController = nil
         }
+    }
+    
+    private func configureMapForChapterAnnotations() {
+        MapConfig.sharedMapConfig.geoplaces = geoplaces
+        MapConfig.sharedMapConfig.focusOnOne = false
+        MapConfig.sharedMapConfig.title = "Chapter \(chapter)"
+    }
+    
+    private func getGeoplaceFromUrl(_ path: String) -> GeoPlace? {
+        let baseUrl = ScriptureRenderer.Constant.baseUrl
+        
+        if let geoplaceId = Int(path.substring(fromOffset: baseUrl.count)) {
+            if let geoplace = GeoDatabase.sharedGeoDatabase.geoPlaceForId(geoplaceId) {
+                return geoplace
+            }
+        }
+        
+        return nil
     }
 }

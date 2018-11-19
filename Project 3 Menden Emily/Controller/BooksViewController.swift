@@ -32,7 +32,7 @@ class BooksViewController: UITableViewController {
         if let scripturesVC = segue.destination as? ScripturesViewController {
             if let indexPath = sender as? IndexPath {   // could send a Book instead
                 scripturesVC.bookId = books[indexPath.row].id
-                scripturesVC.chapter = 7
+                scripturesVC.chapter = 2
             }
         }
         // when preparing for segue to map, could use Configuration object or could set all values needed here
