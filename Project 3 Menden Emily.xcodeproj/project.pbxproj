@@ -11,6 +11,7 @@
 		CC5B6AB3219A456300838B17 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5B6AB2219A456300838B17 /* WebKit.framework */; };
 		CC5B6AB5219A459700838B17 /* ScripturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B6AB4219A459700838B17 /* ScripturesViewController.swift */; };
 		CC6788902199F3A5002F830E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67888F2199F3A5002F830E /* BooksViewController.swift */; };
+		CC719C3021A3290D0021449C /* ChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC719C2F21A3290D0021449C /* ChaptersViewController.swift */; };
 		CC7F5C352198FF0C003103CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F5C342198FF0C003103CA /* AppDelegate.swift */; };
 		CC7F5C3A2198FF0C003103CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC7F5C382198FF0C003103CA /* Main.storyboard */; };
 		CC7F5C3C2198FF0F003103CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC7F5C3B2198FF0F003103CA /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		CC5B6AB2219A456300838B17 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		CC5B6AB4219A459700838B17 /* ScripturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScripturesViewController.swift; sourceTree = "<group>"; };
 		CC67888F2199F3A5002F830E /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		CC719C2F21A3290D0021449C /* ChaptersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersViewController.swift; sourceTree = "<group>"; };
 		CC7F5C312198FF0C003103CA /* Project 3 Menden Emily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 3 Menden Emily.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7F5C342198FF0C003103CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC7F5C392198FF0C003103CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				CC7F5C342198FF0C003103CA /* AppDelegate.swift */,
 				CC67888F2199F3A5002F830E /* BooksViewController.swift */,
+				CC719C2F21A3290D0021449C /* ChaptersViewController.swift */,
 				CC5B6AB4219A459700838B17 /* ScripturesViewController.swift */,
 				CC7F5C5D2199EFBC003103CA /* VolumesViewController.swift */,
 				CCA8D8BF219A8D7500963A87 /* MapViewController.swift */,
@@ -303,6 +306,7 @@
 				CC7F5C582199EE11003103CA /* ScriptureRenderer.swift in Sources */,
 				CC7F5C552199EE11003103CA /* Book.swift in Sources */,
 				CC7F5C562199EE11003103CA /* GeoPlace.swift in Sources */,
+				CC719C3021A3290D0021449C /* ChaptersViewController.swift in Sources */,
 				CC7F5C592199EE11003103CA /* Scripture.swift in Sources */,
 				CCFEBAEF219DCD0A00FBE9AB /* MapConfig.swift in Sources */,
 				CC7F5C542199EE11003103CA /* GeoDatabase.swift in Sources */,

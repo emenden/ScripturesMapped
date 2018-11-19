@@ -13,7 +13,10 @@ class BooksViewController: UITableViewController {
     private struct Storyboard {
         static let BookCellIdentifier = "BookCell"
         static let ShowScripturesSegueIdentifier = "ShowChapterContent"
+        static let ShowChapterListSegueIdentifier = "ShowChapterList"
     }
+    
+    // MARK:- Properties
     
     var books = [Book]()
     var volume = ""
@@ -29,16 +32,24 @@ class BooksViewController: UITableViewController {
     
     // MARK:- Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scripturesVC = segue.destination as? ScripturesViewController {
-            if let indexPath = sender as? IndexPath {   // could send a Book instead
-                scripturesVC.bookId = books[indexPath.row].id
-                scripturesVC.chapter = 2
+        
+        if let book = sender as? Book {
+            if let scripturesVC = segue.destination as? ScripturesViewController {
+                /*if let indexPath = sender as? IndexPath {   // could send a Book instead
+                 scripturesVC.bookId = books[indexPath.row].id
+                 scripturesVC.chapter = 2
+                 }*/
+                scripturesVC.bookId = book.id
+                scripturesVC.chapter = 0
+            }
+            if let chaptersVC = segue.destination as? ChaptersViewController {
+                chaptersVC.book = book
             }
         }
-        // when preparing for segue to map, could use Configuration object or could set all values needed here
     }
     
     // MARK:- Table view Data source
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return books.count
     }
@@ -52,9 +63,20 @@ class BooksViewController: UITableViewController {
     }
     
     // MARK:- Table view delegate
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //performSegue(withIdentifier: Storyboard.ShowScripturesSegueIdentifier, sender: self)
-        performSegue(withIdentifier: Storyboard.ShowScripturesSegueIdentifier, sender: indexPath)
+        let bookId = books[indexPath.row].id
+        let book = GeoDatabase.sharedGeoDatabase.bookForId(bookId)
+        
+        if let numChapters = book.numChapters {
+            if numChapters > 1 {
+                performSegue(withIdentifier: Storyboard.ShowChapterListSegueIdentifier, sender: book)
+            } else {
+                performSegue(withIdentifier: Storyboard.ShowScripturesSegueIdentifier, sender: book)
+            }
+        } else {
+            performSegue(withIdentifier: Storyboard.ShowScripturesSegueIdentifier, sender: book)
+        }
     }
     
     // MARK:- Helpers

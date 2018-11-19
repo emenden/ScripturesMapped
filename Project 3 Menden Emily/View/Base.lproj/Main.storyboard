@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="2442" y="-517"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Chapters View Controller-->
         <scene sceneID="J9k-hM-7Qk">
             <objects>
-                <tableViewController id="w3G-Ih-Lmt" sceneMemberID="viewController">
+                <tableViewController id="w3G-Ih-Lmt" customClass="ChaptersViewController" customModule="Project_3_Menden_Emily" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NfI-IO-Knf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,7 +176,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWA-zj-yPM">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -193,6 +193,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2sA-Xf-mKg"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="webView" destination="oWA-zj-yPM" id="VsT-Jr-DdH"/>
                         <segue destination="KbH-cj-1HG" kind="showDetail" identifier="ShowMap" id="BbY-sJ-5Gs"/>
@@ -252,6 +254,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="BbY-sJ-5Gs"/>
-        <segue reference="v4c-b9-KaG"/>
+        <segue reference="UsB-dR-G2q"/>
     </inferredMetricsTieBreakers>
 </document>
