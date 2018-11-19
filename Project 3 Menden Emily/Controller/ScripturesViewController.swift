@@ -32,7 +32,9 @@ class ScripturesViewController : UIViewController, WKNavigationDelegate {
     // MARK:- Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.ShowMapSegueIdentifier {
-            
+            if let geoplace = sender as? GeoPlace {
+                configureMapForSingleAnnotation(geoplace)
+            }
         }
     }
     
@@ -53,9 +55,6 @@ class ScripturesViewController : UIViewController, WKNavigationDelegate {
         print(geoplaces)
         self.geoplaces = geoplaces
         
-        //configureMap()
-        //configureDetailViewController()
-        
         webView.navigationDelegate = self
         webView.loadHTMLString(html, baseURL: nil)
     }
@@ -71,12 +70,8 @@ class ScripturesViewController : UIViewController, WKNavigationDelegate {
                     print("There is no map view controller")
                     
                     if let geoplace = getGeoplaceFromUrl(path) {
-                        MapConfig.sharedMapConfig.selectedGeoplace = geoplace
-                        MapConfig.sharedMapConfig.geoplaces.append(geoplace)
-                        MapConfig.sharedMapConfig.focusOnOne = true
+                        performSegue(withIdentifier: Storyboard.ShowMapSegueIdentifier, sender: geoplace)
                     }
-                    // create a map view controller and zoom on their click
-
                 } else {
                     print("There is a map view controller")
                     
@@ -107,9 +102,21 @@ class ScripturesViewController : UIViewController, WKNavigationDelegate {
     }
     
     private func configureMapForChapterAnnotations() {
+        MapConfig.sharedMapConfig.geoplaces.removeAll()
         MapConfig.sharedMapConfig.geoplaces = geoplaces
+        
+        MapConfig.sharedMapConfig.selectedGeoplace = nil
         MapConfig.sharedMapConfig.focusOnOne = false
         MapConfig.sharedMapConfig.title = "Chapter \(chapter)"
+    }
+    
+    private func configureMapForSingleAnnotation(_ geoplace: GeoPlace) {
+        MapConfig.sharedMapConfig.geoplaces.removeAll()
+        MapConfig.sharedMapConfig.geoplaces.append(geoplace)
+        
+        MapConfig.sharedMapConfig.selectedGeoplace = geoplace
+        MapConfig.sharedMapConfig.focusOnOne = true
+        MapConfig.sharedMapConfig.title = geoplace.placename
     }
     
     private func getGeoplaceFromUrl(_ path: String) -> GeoPlace? {
