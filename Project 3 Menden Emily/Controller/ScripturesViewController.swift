@@ -13,6 +13,7 @@ class ScripturesViewController : UIViewController, WKNavigationDelegate {
     
     private struct Storyboard {
         static let ShowMapSegueIdentifier = "ShowMap"
+        static let ShowChapterAnnotsMapIdentifier = "ShowChapterAnnotsMap"
     }
     
     // MARK:- Properties
@@ -29,12 +30,18 @@ class ScripturesViewController : UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
     
+    @IBOutlet weak var mapButton: UIBarButtonItem!
+    
     // MARK:- Segue
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.ShowMapSegueIdentifier {
             if let geoplace = sender as? GeoPlace {
                 configureMapForSingleAnnotation(geoplace)
             }
+        }
+        else if segue.identifier == Storyboard.ShowChapterAnnotsMapIdentifier {
+            configureMapForChapterAnnotations()
         }
     }
     
@@ -55,6 +62,9 @@ class ScripturesViewController : UIViewController, WKNavigationDelegate {
         print(geoplaces)
         self.geoplaces = geoplaces
         
+        MapConfig.sharedMapConfig.geoplaces = geoplaces
+        mapViewController?.annotations = []
+        
         webView.navigationDelegate = self
         webView.loadHTMLString(html, baseURL: nil)
     }
@@ -74,8 +84,8 @@ class ScripturesViewController : UIViewController, WKNavigationDelegate {
                     }
                 } else {
                     print("There is a map view controller")
-                    
                     if let geoplace = getGeoplaceFromUrl(path) {
+                        MapConfig.sharedMapConfig.title = geoplace.placename
                         mapViewController?.zoomOnLocation(geoplace)
                     }
                 }
@@ -95,6 +105,11 @@ class ScripturesViewController : UIViewController, WKNavigationDelegate {
                 mapViewController = navVC.topViewController as? MapViewController
                 print("in configureDetailViewController")
                 configureMapForChapterAnnotations()
+                
+                if mapViewController?.mapView != nil {
+                    mapViewController?.configureMap()
+                    MapConfig.sharedMapConfig.title = "Chapter \(chapter)"
+                }
             }
         } else {
             mapViewController = nil
@@ -127,7 +142,7 @@ class ScripturesViewController : UIViewController, WKNavigationDelegate {
                 return geoplace
             }
         }
-        
+    
         return nil
     }
 }

@@ -13,6 +13,7 @@ class ChaptersViewController : UITableViewController {
     private struct Storyboard {
         static let ChapterCellIdentifier = "ChapterCell"
         static let ShowChapterContentSegueIdentifier = "ShowChapterContent"
+        static let ShowChapterListSegueIdentifier = "ShowChapterList"
     }
     
     // MARK:- Properties

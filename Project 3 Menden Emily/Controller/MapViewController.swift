@@ -21,6 +21,7 @@ class MapViewController : UIViewController, MKMapViewDelegate {
     
     var annotations = [MKPointAnnotation]()
     var mapTitle: String = ""
+    var isVisible = false
     
     // MARK:- Outlets
     
@@ -37,36 +38,15 @@ class MapViewController : UIViewController, MKMapViewDelegate {
         }
         
         mapView.register(MKPinAnnotationView.self, forAnnotationViewWithReuseIdentifier: Constant.AnnotationReuseIdentifier)
-        /*
-        let annotation = MKPointAnnotation()
-        
-        annotation.coordinate = CLLocationCoordinate2DMake(40.2506, -111.65247)
-        annotation.title = "Tanner Building"
-        annotation.subtitle = "BYU Campus"
-        
-        mapView.addAnnotation(annotation)*/
-        //showAnnotations()
-        title = mapTitle
+
+        title = MapConfig.sharedMapConfig.title
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("in map viewDidAppear")
         
-        /*
-        // one way to set the camera
-        let camera = MKMapCamera(lookingAtCenter: CLLocationCoordinate2DMake(40.2506, -111.65247), fromEyeCoordinate: CLLocationCoordinate2DMake(40.2306, -111.65247), eyeAltitude: 500)
-        // ^^ need to go further to the south on eye Coordinate for 3d ?
-        
-        mapView.setCamera(camera, animated: true)
-        
-        // another way to set the camera
-        let center = CLLocationCoordinate2DMake(40.2506, -111.65247)
-        let span  = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-        let viewRegion = MKCoordinateRegion(center: center, span: span)
-        
-        mapView.setRegion(viewRegion, animated: true)
-        */
+        isVisible = true
         configureMap()
     }
     
@@ -78,7 +58,7 @@ class MapViewController : UIViewController, MKMapViewDelegate {
         if let pinView = view as? MKPinAnnotationView {
             pinView.canShowCallout = true
             pinView.animatesDrop = true
-            pinView.pinTintColor = UIColor.purple
+            pinView.pinTintColor = UIColor.red
         }
         
         return view
@@ -89,13 +69,18 @@ class MapViewController : UIViewController, MKMapViewDelegate {
     func configureMap() {
         print("configuring map")
         
-        mapTitle = MapConfig.sharedMapConfig.title
+        title = MapConfig.sharedMapConfig.title
+        
+        mapView.removeAnnotations(self.annotations)
+        annotations.removeAll()
         
         if annotations.count == 0 {
             createAnnotations(MapConfig.sharedMapConfig.geoplaces)
         }
 
-        showAnnotations()
+        if annotations.count > 0 {
+            showAnnotations()
+        }
         
         if MapConfig.sharedMapConfig.focusOnOne == true {
             if let geoplace = MapConfig.sharedMapConfig.selectedGeoplace {
@@ -127,6 +112,8 @@ class MapViewController : UIViewController, MKMapViewDelegate {
         let camera = MKMapCamera(lookingAtCenter: CLLocationCoordinate2DMake(geoplace.latitude, geoplace.longitude), fromEyeCoordinate: CLLocationCoordinate2DMake(geoplace.viewLatitude, geoplace.viewLongitude), eyeAltitude: geoplace.viewAltitude)
         
         mapView.setCamera(camera, animated: true)
+        
+        title = MapConfig.sharedMapConfig.title
     }
     
 }

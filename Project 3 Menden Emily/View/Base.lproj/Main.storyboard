@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satelliteFlyover" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RqQ-gF-1Rl">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <connections>
                                     <outlet property="delegate" destination="syr-i1-fJf" id="Ylm-EO-0fr"/>
                                 </connections>
@@ -120,7 +120,7 @@
                     </tableView>
                     <connections>
                         <segue destination="w3G-Ih-Lmt" kind="show" identifier="ShowChapterList" id="PnD-T5-qIx"/>
-                        <segue destination="OCv-qu-mza" kind="show" identifier="ShowChapterContent" id="v4c-b9-KaG"/>
+                        <segue destination="OCv-qu-mza" kind="show" identifier="ShowChapterContent" id="kcB-PL-oTa"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yss-Vc-FxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -160,7 +160,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="OCv-qu-mza" kind="show" identifier="ShowChapterContent" id="UsB-dR-G2q"/>
+                        <segue destination="OCv-qu-mza" kind="show" identifier="ShowChapterContent" id="X58-TP-IGe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohT-Aa-Mjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -194,15 +194,30 @@
                         <viewLayoutGuide key="safeArea" id="2sA-Xf-mKg"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="k6a-pI-Gqh">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="zWK-Eq-Ke3"/>
+                        <barButtonItem key="rightBarButtonItem" id="6ch-G2-VSb">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pBY-bG-Hgg">
+                                <rect key="frame" x="276" y="5.5" width="83" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <state key="normal" title="Map"/>
+                                <connections>
+                                    <segue destination="syr-i1-fJf" kind="show" identifier="ShowChapterAnnotsMap" id="gs8-De-SXi"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="mapButton" destination="6ch-G2-VSb" id="FoB-IM-Bp0"/>
                         <outlet property="webView" destination="oWA-zj-yPM" id="VsT-Jr-DdH"/>
                         <segue destination="KbH-cj-1HG" kind="showDetail" identifier="ShowMap" id="BbY-sJ-5Gs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPY-xE-nBk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2844" y="315"/>
+            <point key="canvasLocation" x="2866" y="282"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QWf-6m-hq8">
@@ -254,6 +269,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="BbY-sJ-5Gs"/>
-        <segue reference="UsB-dR-G2q"/>
+        <segue reference="X58-TP-IGe"/>
+        <segue reference="gs8-De-SXi"/>
     </inferredMetricsTieBreakers>
 </document>
